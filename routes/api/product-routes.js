@@ -31,34 +31,19 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
-  Product.create(req.body)
-    .then((product) => {
-      // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-      if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
-          return {
-            product_id: product.id,
-            tag_id,
-          };
-        });
-        return ProductTag.bulkCreate(productTagIdArr);
-      }
-      // if no product tags, just respond
-      res.status(200).json(product);
+    Product.create({
+      product_name: req.body.product_name,
+      price: req.body.price,
+      stock: req.body.stock,
+      tagIds: req.body.tagIds,
     })
-    .then((productTagIds) => res.status(200).json(productTagIds))
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+      .then((newProduct) => {
+        // Send the newly created row as a JSON object
+        res.json(newProduct);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
 });
 
 // update product
@@ -109,10 +94,15 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a product by its `id` value
   Product.destroy({
-    where:{
-      id: req.params.id
-    }
+    where: {
+      id: req.params.id,
+    },
   })
+    .then((deletedProduct) => {
+      res.status(200).json({message: 'Product deleted successfully'})
+      res.json(deletedProduct);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
