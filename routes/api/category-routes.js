@@ -16,13 +16,23 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  Category.create(req.body)
-  .then((newCategory) => {
-    res.json(newCategory);
+  // Category.create(req.body)
+  // .then((newCategory) => {
+  //   res.json(newCategory);
+  // })
+  // .catch((err) => {
+  //   res.json(err);
+  // });
+  Category.create({
+    name: req.body.name,
   })
-  .catch((err) => {
-    res.json(err);
-  });
+    .then((newCategory) => {
+      // Send the newly created row as a JSON object
+      res.json(newCategory);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 router.put('/:id', async (req, res) => {
@@ -47,10 +57,15 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
-    where:{
-      id: req.params.id
-    }
+    where: {
+      id: req.params.id,
+    },
   })
+    .then((deletedCategory) => {
+      res.status(200).json({message: 'Category deleted successfully'})
+      res.json(deletedCategory);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
