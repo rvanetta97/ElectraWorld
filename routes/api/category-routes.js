@@ -25,13 +25,23 @@ router.post('/', (req, res) => {
   });
 });
 
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
-  Category.update(req.body,{
-    where:{
-      id: req.params.id
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedCategory = await Category.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (updatedCategory[0] === 0) {
+      return res.status(404).json({ message: 'Category not found' });
     }
-  })
+
+    res.status(200).json({ message: 'Category updated successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 router.delete('/:id', (req, res) => {
