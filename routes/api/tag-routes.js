@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Tag.findByPk(req.params.id)({
+  Tag.findByPk(req.params.id, {
     include: [
       {
         model: Product,
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   Tag.create({
-    name: req.body.name,
+    tag_name: req.body.tag_name,
   })
     .then((newTag) => {
       // Send the newly created row as a JSON object

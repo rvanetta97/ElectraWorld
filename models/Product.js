@@ -21,15 +21,14 @@ Product.init(
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      isDecimal: true,
       validate: {
         notNull: {
           msg: 'Please enter the price',
         },
-        notDecimal: {
-          msg: 'Please enter a vaild price'
-        }
-      } 
+        isDecimal: {
+          msg: 'Please enter a valid price',
+        },
+      },
     },
     stock: {
       type: DataTypes.INTEGER,
