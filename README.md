@@ -40,9 +40,9 @@ To start the server, run the following command:
 3. npm start
 4. The server will run on http://localhost:3001 by default.
 
-Endpoints:
+# Endpoints:
 
-- Categories:
+Categories:
 
 1. Get all categories
   - URL: /api/categories
@@ -55,69 +55,73 @@ Endpoints:
   - Create a new category
 
 3. Create a Category
-URL: /api/categories
-Method: POST
-Body:
-json
-Copy code
+  - URL: /api/categories
+  - Method: POST
+  - Body:
+    - json
+  - Copy code
 {
   "category_name": "New Category"
 }
-Update a category by ID
 
-URL: /api/categories/:id
-Method: PUT
-Body:
-json
-Copy code
+4. Update a category by ID
+  - URL: /api/categories/:id
+  - Method: PUT
+  - Body:
+    - json
+  - Copy code
+
 {
   "category_name": "Updated Category"
 }
-Delete a category by ID
 
-URL: /api/categories/:id
-Method: DELETE
-Products
-Get all products
+5. Delete a category by ID
+  - URL: /api/categories/:id
+  - Method: DELETE
 
-URL: /api/products
-Method: GET
-Get a single product by ID
+Products:
 
-URL: /api/products/:id
-Method: GET
-Create a new product
+1. Get all products
+  - URL: /api/products
+  - Method: GET
 
-URL: /api/products
-Method: POST
-Body:
-json
-Copy code
+2. Get a single product by ID
+  - URL: /api/products/:id
+  - Method: GET
+
+3. Create a new product
+  - URL: /api/products
+  - Method: POST
+  - Body:
+    - json
+  - Copy code
 {
   "product_name": "Basketball",
   "price": 200.00,
   "stock": 3,
-  "tagIds": [1, 2, 3, 4]
+  "category_id": "3"
 }
-Update a product by ID
 
-URL: /api/products/:id
-Method: PUT
-Body:
-json
-Copy code
+4. Update a product by ID
+  - URL: /api/products/:id
+  - Method: PUT
+  - Body:
+    -json
+  - Copy code
 {
   "product_name": "Updated Product",
   "price": 250.00,
   "stock": 5,
-  "tagIds": [1, 3]
+  "category_id": "3"
 }
-Delete a product by ID
 
-URL: /api/products/:id
-Method: DELETE
-Tags
-Get all tags
+5. Delete a product by ID
+  - URL: /api/products/:id
+  - Method: DELETE
+
+Tags:
+
+1. Get all tags
 
 URL: /api/tags
 Method: GET
