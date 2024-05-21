@@ -3,53 +3,58 @@ Description
 ElectraWorld is an e-commerce platform that manages products, categories, and tags using Node.js, Express, and Sequelize for database management. This project sets up a basic API to perform CRUD operations on products, categories, and tags, demonstrating how to create, read, update, and delete resources in a database.
 
 Table of Contents
-Installation
-Usage
-Endpoints
-Seeding the Database
-Contributing
-License
-Installation
+- Installation
+- Usage
+- Endpoints
+- Seeding the Database
+- Contributing
+- License
+- Installation
+
 Clone the repository:
 
-sh
-Copy code
-git clone https://github.com/yourusername/ElectraWorld.git
-cd ElectraWorld
+1. sh
+2. Copy code
+3. git clone https://github.com/yourusername/ElectraWorld.git
+4. cd ElectraWorld
+
 Install the necessary dependencies:
 
-sh
-Copy code
-npm install
-Set up your environment variables. Create a .env file in the root of the project with the following content:
+1. sh
+2. Copy code
+3. npm install
+4. Set up your environment variables
 
-sh
-Copy code
-DB_NAME='your_database_name'
-DB_USER='your_database_user'
-DB_PASSWORD='your_database_password'
+Create a .env file in the root of the project with the following content:
+1. sh
+2. Copy code
+  - DB_NAME='your_database_name'
+  - DB_USER='your_database_user'
+  - DB_PASSWORD='your_database_password'
 Ensure you have a PostgreSQL server running and accessible with the provided credentials.
 
 Usage
 To start the server, run the following command:
+1. sh
+2. Copy code
+3. npm start
+4. The server will run on http://localhost:3001 by default.
 
-sh
-Copy code
-npm start
-The server will run on http://localhost:3001 by default.
+Endpoints:
 
-Endpoints
-Categories
-Get all categories
+- Categories:
 
-URL: /api/categories
-Method: GET
-Get a single category by ID
+1. Get all categories
+  - URL: /api/categories
+  - Method: GET
+  - Get a single category by ID
 
-URL: /api/categories/:id
-Method: GET
-Create a new category
+2. Get categories by ID
+  - URL: /api/categories/:id
+  - Method: GET
+  - Create a new category
 
+3. Create a Category
 URL: /api/categories
 Method: POST
 Body:
