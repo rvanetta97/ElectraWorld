@@ -45,56 +45,55 @@ To start the server, run the following command:
 Categories:
 
 1. Get all categories
-  - URL: /api/categories
-  - Method: GET
-  - Get a single category by ID
+    - URL: /api/categories
+    - Method: GET
+    - Get a single category by ID
 
 2. Get categories by ID
-  - URL: /api/categories/:id
-  - Method: GET
-  - Create a new category
+    - URL: /api/categories/:id
+    - Method: GET
+    - Create a new category
 
 3. Create a Category
-  - URL: /api/categories
-  - Method: POST
-  - Body:
-    - json
-  - Copy code
+    - URL: /api/categories
+    - Method: POST
+    - Body:
+      - json
+    - Copy code
 {
   "category_name": "New Category"
 }
 
 4. Update a category by ID
-  - URL: /api/categories/:id
-  - Method: PUT
-  - Body:
-    - json
-  - Copy code
-
+    - URL: /api/categories/:id
+    - Method: PUT
+    - Body:
+      - json
+    - Copy code
 {
   "category_name": "Updated Category"
 }
 
 5. Delete a category by ID
-  - URL: /api/categories/:id
-  - Method: DELETE
+    - URL: /api/categories/:id
+    - Method: DELETE
 
 Products:
 
 1. Get all products
-  - URL: /api/products
-  - Method: GET
+    - URL: /api/products
+    - Method: GET
 
 2. Get a single product by ID
-  - URL: /api/products/:id
-  - Method: GET
+    - URL: /api/products/:id
+    - Method: GET
 
 3. Create a new product
-  - URL: /api/products
-  - Method: POST
-  - Body:
-    - json
-  - Copy code
+    - URL: /api/products
+    - Method: POST
+    - Body:
+      - json
+    - Copy code
 {
   "product_name": "Basketball",
   "price": 200.00,
@@ -103,11 +102,11 @@ Products:
 }
 
 4. Update a product by ID
-  - URL: /api/products/:id
-  - Method: PUT
-  - Body:
-    -json
-  - Copy code
+    - URL: /api/products/:id
+    - Method: PUT
+    - Body:
+      -json
+    - Copy code
 {
   "product_name": "Updated Product",
   "price": 250.00,
@@ -116,58 +115,53 @@ Products:
 }
 
 5. Delete a product by ID
-  - URL: /api/products/:id
-  - Method: DELETE
+    - URL: /api/products/:id
+    - Method: DELETE
 
 Tags:
 
 1. Get all tags
+    - URL: /api/tags
+    - Method: GET
 
-URL: /api/tags
-Method: GET
-Get a single tag by ID
+2. Get a single tag by ID
+    - URL: /api/tags/:id
+    - Method: GET
 
-URL: /api/tags/:id
-Method: GET
-Create a new tag
-
-URL: /api/tags
-Method: POST
-Body:
-json
-Copy code
+3. Create a new tag
+    - URL: /api/tags
+    - Method: POST
+    - Body:
+      - json
+    - Copy code
 {
   "tag_name": "New Tag"
 }
-Update a tag by ID
-
-URL: /api/tags/:id
-Method: PUT
-Body:
-json
-Copy code
+4. Update a tag by ID
+    - URL: /api/tags/:id
+    - Method: PUT
+    - Body:
+      - json
+    - Copy code
 {
   "tag_name": "Updated Tag"
 }
-Delete a tag by ID
 
-URL: /api/tags/:id
-Method: DELETE
-Seeding the Database
-To seed the database with initial data, use the following command:
+5. Delete a tag by ID
+    - URL: /api/tags/:id
+    - Method: DELETE
 
-sh
-Copy code
-npm run seed
-This command will run the seed scripts defined in the seeds directory, populating your database with sample data.
+Seeding the Database:
+The seed data will run automatically once you have started the server.
 
-Contributing
+Contributing:
 Fork the repository.
 Create a new branch (git checkout -b feature-branch).
 Make your changes and commit them (git commit -am 'Add new feature').
 Push to the branch (git push origin feature-branch).
 Create a new Pull Request.
-License
+
+License:
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 By following this README, you should be able to set up and run the ElectraWorld application, interact with its endpoints, and seed the database with initial data. If you encounter any issues or have any questions, feel free to open an issue or contribute to the project.
