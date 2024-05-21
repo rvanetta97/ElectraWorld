@@ -1,6 +1,10 @@
 # ElectraWorld
 Description
+
 ElectraWorld is an e-commerce platform that manages products, categories, and tags using Node.js, Express, and Sequelize for database management. This project sets up a basic API to perform CRUD operations on products, categories, and tags, demonstrating how to create, read, update, and delete resources in a database.
+
+Demo Video:
+https://drive.google.com/file/d/12QpD-kUQPFhzjbtwilj91VQwV074keuc/view?usp=sharing
 
 Table of Contents
 - Installation
